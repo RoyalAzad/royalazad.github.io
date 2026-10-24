@@ -1,0 +1,573 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Royal Azad Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single column "service record" — hero with ECG trace, then ruled records like an intervention log */
+:root{
+  --bg:#F2F6F6; --surface:#FFFFFF; --fg:#0F2528; --muted:#4F6669; --line:#CBD8D9; --accent:#0B7C80; --accent-fg:#FFFFFF; --accent-soft:#DDEFEF;
+  --f-display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --f-body:'IBM Plex Sans','Segoe UI',system-ui,sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1A1C;--surface:#112427;--fg:#E4F0F0;--muted:#93ABAD;--line:#244044;--accent:#4FC3C6;--accent-fg:#06191A;--accent-soft:#12383B;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0B1A1C;--surface:#112427;--fg:#E4F0F0;--muted:#93ABAD;--line:#244044;--accent:#4FC3C6;--accent-fg:#06191A;--accent-soft:#12383B;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.6;padding-block:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body[data-l="fr"] [lang="en"]{display:none}
+body[data-l="en"] [lang="fr"]{display:none}
+.wrap{max-width:60rem;margin:0 auto}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-block:1rem;border-bottom:1px solid var(--line);font-family:var(--f-mono);font-size:.8rem;color:var(--muted);flex-wrap:wrap}
+.bar nav{display:flex;gap:1.1rem;flex-wrap:wrap}
+.bar nav a{color:var(--muted);text-decoration:none}
+.bar nav a:hover{color:var(--accent)}
+.toggle{display:inline-flex;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.toggle button{font:inherit;background:transparent;color:var(--muted);border:0;padding:.3rem .65rem;cursor:pointer}
+.toggle button[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg)}
+
+.hero{padding-block:3.5rem 2.5rem}
+.eyebrow{font-family:var(--f-mono);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(2.6rem,8vw,5rem);line-height:1;letter-spacing:-.02em;margin:.6rem 0 1rem;text-wrap:balance}
+.role{font-family:var(--f-display);font-weight:500;font-size:clamp(1.2rem,3vw,1.6rem);margin:0 0 1.2rem}
+.lede{max-width:40rem;color:var(--muted);font-size:1.075rem;margin:0 0 1.6rem}
+.ecg{width:100%;height:auto;display:block;margin-block:1.8rem 0}
+.ecg path{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.ecg .base{stroke:var(--line);stroke-width:1;stroke-dasharray:2 6}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem}
+.btn{display:inline-block;font-family:var(--f-body);font-weight:500;font-size:.95rem;padding:.65rem 1.1rem;border-radius:4px;text-decoration:none;border:1px solid var(--accent);background:var(--accent);color:var(--accent-fg)}
+.btn.alt{background:transparent;color:var(--accent)}
+
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:0;border-block:1px solid var(--line)}
+.fig{padding:1.3rem 1rem 1.3rem 0}
+.fig b{display:block;font-family:var(--f-display);font-size:2.4rem;line-height:1;font-weight:700}
+.fig span{font-size:.9rem;color:var(--muted)}
+
+section{padding-block:3rem 0}
+h2{font-family:var(--f-display);font-weight:700;font-size:1.7rem;letter-spacing:-.01em;margin:0 0 1.4rem;display:flex;align-items:baseline;gap:.8rem;text-wrap:balance}
+h2 small{font-family:var(--f-mono);font-weight:400;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+.dom{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem}
+.dom article{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1.1rem 1.2rem}
+.dom h3{font-family:var(--f-display);font-size:1.1rem;margin:0 0 .4rem}
+.dom p{margin:0;color:var(--muted);font-size:.92rem}
+.dom .brands{margin-top:.6rem;font-family:var(--f-mono);font-size:.78rem;color:var(--accent)}
+
+.tools{display:flex;justify-content:space-between;align-items:center;gap:.8rem 1rem;flex-wrap:wrap;margin:-.6rem 0 1.2rem;font-size:.88rem;color:var(--muted)}
+.tools button{font:inherit;font-family:var(--f-mono);font-size:.78rem;background:transparent;border:1px solid var(--line);color:var(--accent);border-radius:4px;padding:.3rem .7rem;cursor:pointer;margin-left:.4rem}
+.tools button:hover{background:var(--accent-soft)}
+details>summary{list-style:none;cursor:pointer}
+details>summary::-webkit-details-marker{display:none}
+details>summary::after{content:"";flex:none;width:.55rem;height:.55rem;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);transition:transform .2s;margin:0 .2rem .2rem .4rem}
+details[open]>summary::after{transform:rotate(-135deg);margin-bottom:0;margin-top:.3rem}
+details>summary:hover .nm,details>summary:hover .tt{color:var(--accent)}
+.track{border:1px solid var(--line);border-radius:8px;background:var(--surface);margin-bottom:1.2rem;overflow:hidden}
+.track>summary{display:flex;align-items:center;gap:.9rem;padding:1rem 1.2rem}
+.track>summary svg{flex:none;width:30px;height:24px;color:var(--accent)}
+.track .tt{font-family:var(--f-display);font-weight:700;font-size:1.3rem;flex:1;min-width:0}
+.track .ct{font-family:var(--f-mono);font-size:.75rem;color:var(--muted)}
+.org-item{border-top:1px solid var(--line)}
+.org-item>summary{display:flex;align-items:center;gap:1rem;padding:.9rem 1.2rem}
+.org-item .hd{flex:1;min-width:0}
+.org-item .nm{display:block;font-family:var(--f-display);font-weight:700;font-size:1.05rem}
+.org-item .rl{display:block;color:var(--muted);font-size:.92rem}
+.org-item .dt{display:block;font-family:var(--f-mono);font-size:.76rem;color:var(--accent);margin-top:.15rem}
+.org-item[open]{background:var(--bg)}
+.body{padding:0 1.2rem 1.3rem}
+.body ul{margin:0 0 1rem;padding-left:1.1rem;color:var(--muted);font-size:.95rem}
+.body li{padding-bottom:.25rem}
+.body h4{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:1.4rem 0 .6rem;font-weight:500}
+details[open]>.body{animation:fold .25s ease-out}
+@keyframes fold{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:.8rem}
+.spec>div{border:1px solid var(--line);border-radius:6px;padding:.8rem 1rem;background:var(--surface)}
+.spec b{display:block;font-family:var(--f-display);font-size:.98rem;margin-bottom:.2rem}
+.spec .s{color:var(--muted);font-size:.88rem;line-height:1.5}
+.proto{border:1px solid var(--line);border-radius:6px;padding:1rem 1.1rem;background:var(--surface)}
+.proto .pt{font-family:var(--f-display);font-weight:700;font-size:1.05rem;margin:0 0 .3rem}
+.proto .pm{margin:.4rem 0 .9rem;color:var(--muted);font-size:.9rem}
+.steps{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+.steps>span{font-family:var(--f-mono);font-size:.74rem;background:var(--accent-soft);padding:.25rem .55rem;border-radius:3px}
+.tw{overflow-x:auto;margin-bottom:.4rem}
+.tw table{border-collapse:collapse;width:100%;min-width:34rem;font-size:.86rem}
+.tw th{font-family:var(--f-mono);font-weight:500;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:.5rem .6rem;border-bottom:1px solid var(--line)}
+.tw td{padding:.55rem .6rem;border-bottom:1px solid var(--line);vertical-align:top;color:var(--muted)}
+.tw td:first-child{color:var(--fg);font-weight:500}
+.cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:1rem}
+.case{border:1px solid var(--line);border-radius:6px;padding:1.2rem;background:var(--surface)}
+.case .tag{font-family:var(--f-mono);font-size:.75rem;color:var(--accent);letter-spacing:.06em;text-transform:uppercase}
+.case h3{font-family:var(--f-display);font-size:1.1rem;margin:.3rem 0 .6rem}
+.case p{margin:0 0 .5rem;font-size:.92rem;color:var(--muted)}
+.case p b{color:var(--fg);font-weight:500}
+
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:2rem}
+.cols h3{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:0 0 .7rem}
+.cols ul{margin:0;padding:0;list-style:none}
+.cols li{padding-block:.55rem;border-bottom:1px solid var(--line)}
+.cols li small{display:block;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chips span{font-family:var(--f-mono);font-size:.8rem;background:var(--accent-soft);color:var(--fg);padding:.25rem .6rem;border-radius:3px}
+
+.contact{margin-top:3rem;border-top:1px solid var(--line);padding-block:2.5rem 3rem}
+.contact h2{font-size:2rem}
+.rows{display:grid;gap:.6rem;max-width:34rem}
+.row{display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap;border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:.7rem 1rem}
+.row span{font-family:var(--f-mono);font-size:.9rem;overflow-wrap:anywhere;min-width:0}
+.row button{font:inherit;font-size:.8rem;background:transparent;border:1px solid var(--line);color:var(--accent);border-radius:4px;padding:.25rem .6rem;cursor:pointer}
+footer{padding-bottom:2rem;font-family:var(--f-mono);font-size:.75rem;color:var(--muted)}
+
+@media (max-width:640px){
+  .hero{padding-block:2.2rem 1.8rem}
+}
+@media (prefers-reduced-motion:no-preference){
+  .ecg path:not(.base){stroke-dasharray:1400;stroke-dashoffset:0;animation:trace 2.4s ease-out}
+  @keyframes trace{from{stroke-dashoffset:1400}to{stroke-dashoffset:0}}
+}
+
+html{scroll-behavior:auto}
+section,.contact{scroll-margin-top:1rem}
+.bar nav a{position:relative;padding-block:.2rem;transition:color .15s}
+.bar nav a::after{content:"";position:absolute;left:0;right:0;bottom:-.1rem;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.bar nav a:hover::after,.bar nav a[aria-current="true"]::after{transform:scaleX(1)}
+.bar nav a[aria-current="true"]{color:var(--accent)}
+h2{position:relative}
+.flash h2{color:var(--accent)}
+.flash h2::after{content:"";position:absolute;left:0;bottom:-.5rem;height:3px;width:100%;background:var(--accent);transform-origin:left}
+@media (prefers-reduced-motion:no-preference){
+  .flash h2{animation:nudge .6s ease-out}
+  .flash h2::after{animation:sweep 1.3s ease-out forwards}
+  @keyframes sweep{0%{transform:scaleX(0);opacity:1}55%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}
+  @keyframes nudge{0%{transform:translateX(-10px);opacity:.3}100%{transform:none;opacity:1}}
+}
+@media (prefers-reduced-motion:reduce){.flash h2::after{animation:hold 1.2s forwards}@keyframes hold{0%,70%{opacity:1}100%{opacity:0}}}
+
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5rem,1fr));gap:.7rem}
+.ph{display:flex;flex-direction:column;text-align:left;padding:0;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg);cursor:zoom-in;overflow:hidden;font:inherit;min-width:0}
+.ph img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--accent-soft)}
+.ph .cap{display:flex;flex-direction:column;padding:.5rem .6rem .6rem;gap:.1rem;font-size:.78rem;color:var(--muted);line-height:1.35}
+.ph .cap b{color:var(--fg);font-weight:500;font-size:.82rem}
+.ph:hover{border-color:var(--accent)}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(6,20,22,.9);display:flex;align-items:center;justify-content:center;padding:1rem;flex-direction:column;gap:.6rem}
+.lb[hidden]{display:none}
+.lb img{max-width:100%;max-height:82vh;object-fit:contain;border-radius:4px;background:#000}
+.lb p{margin:0;color:#E4F0F0;font-size:.9rem;text-align:center}
+.lb button{position:absolute;top:max(.8rem,env(safe-area-inset-top,0px));right:max(.8rem,env(safe-area-inset-right,0px));font:inherit;background:#fff;color:#0F2528;border:0;border-radius:4px;padding:.4rem .8rem;cursor:pointer}
+</style>
+
+<body data-l="fr">
+<div class="wrap">
+
+<header class="bar">
+  <nav>
+    <a href="#expertise"><span lang="fr">Expertise</span><span lang="en">Expertise</span></a>
+    <a href="#parcours"><span lang="fr">Parcours</span><span lang="en">Experience</span></a>
+    <a href="#cas"><span lang="fr">Cas SAV</span><span lang="en">Service cases</span></a>
+    <a href="#formation"><span lang="fr">Formation</span><span lang="en">Education</span></a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="toggle" role="group" aria-label="Langue / Language">
+    <button id="bfr" type="button" aria-pressed="true">FR</button>
+    <button id="ben" type="button" aria-pressed="false">EN</button>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="eyebrow"><span lang="fr">Ingénierie biomédicale · Dakar, Sénégal</span><span lang="en">Biomedical engineering · Dakar, Senegal</span></div>
+  <h1>Royal Azad</h1>
+  <p class="role"><span lang="fr">Ingénieur biomédical</span><span lang="en">Biomedical Engineer</span></p>
+  <p class="lede">
+    <span lang="fr">J'installe, maintiens et fais fonctionner les équipements médicaux des hôpitaux et cliniques d'Afrique de l'Ouest : endoscopie, électrochirurgie, stérilisation, cardiologie, imagerie. Du diagnostic de panne à la formation des utilisateurs.</span>
+    <span lang="en">I install, maintain and keep running the medical equipment of hospitals and clinics in West Africa: endoscopy, electrosurgery, sterilization, cardiology, imaging. From fault diagnosis to user training.</span>
+  </p>
+  <div class="cta">
+    <a class="btn" href="#contact"><span lang="fr">Me contacter</span><span lang="en">Get in touch</span></a>
+    <a class="btn alt" href="https://linkedin.com/in/royal-bebey-azad-84a7a2303" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+  <svg class="ecg" viewBox="0 0 900 90" role="img" aria-label="ECG">
+    <path class="base" d="M0 50H900"/>
+    <path d="M0 50H120L135 50L145 38L155 50H190L200 56L212 8L226 84L238 50H300L316 40L332 50H470L485 50L495 38L505 50H540L550 56L562 8L576 84L588 50H650L666 40L682 50H900"/>
+  </svg>
+</div>
+
+<div class="figs">
+  <div class="fig"><b>15+</b><span lang="fr">hôpitaux régionaux suivis en SAV</span><span lang="en">regional hospitals covered in after-sales service</span></div>
+  <div class="fig"><b>20</b><span lang="fr">cliniques suivies en SAV</span><span lang="en">clinics covered in after-sales service</span></div>
+  <div class="fig"><b>3000+</b><span lang="fr">jeunes formés en sciences et technologies</span><span lang="en">young learners trained in science and technology</span></div>
+</div>
+
+<section id="expertise">
+  <h2><span lang="fr">Domaines d'expertise</span><span lang="en">Areas of expertise</span></h2>
+  <div class="dom">
+    <article>
+      <h3><span lang="fr">Endoscopie et électrochirurgie</span><span lang="en">Endoscopy and electrosurgery</span></h3>
+      <p><span lang="fr">Installation, paramétrage, maintenance préventive et corrective.</span><span lang="en">Installation, configuration, preventive and corrective maintenance.</span></p>
+      <div class="brands">Karl Storz · Fujifilm</div>
+    </article>
+    <article>
+      <h3><span lang="fr">Imagerie médicale</span><span lang="en">Medical imaging</span></h3>
+      <p><span lang="fr">Scanner, mammographie, échographie, radiographie numérique, panoramique dentaire.</span><span lang="en">CT, mammography, ultrasound, digital radiography, dental panoramic.</span></p>
+      <div class="brands">Toshiba · Philips · GE · Samsung Medison · CHISON · Fujifilm</div>
+    </article>
+    <article>
+      <h3><span lang="fr">Cardiologie et explorations</span><span lang="en">Cardiology and diagnostics</span></h3>
+      <p><span lang="fr">Épreuve d'effort, spirométrie, matériel de diagnostic.</span><span lang="en">Stress testing, spirometry, diagnostic equipment.</span></p>
+      <div class="brands">Schiller · Jaeger</div>
+    </article>
+    <article>
+      <h3><span lang="fr">Stérilisation et bloc opératoire</span><span lang="en">Sterilization and operating theatre</span></h3>
+      <p><span lang="fr">Autoclaves, scialytiques, matériel de chirurgie, fauteuils dentaires.</span><span lang="en">Autoclaves, surgical lights, surgical equipment, dental chairs.</span></p>
+    </article>
+    <article>
+      <h3><span lang="fr">Appels d'offres et formation</span><span lang="en">Tenders and training</span></h3>
+      <p><span lang="fr">Cotations techniques pour D.A.O, formation du personnel utilisateur, rapports d'intervention et certificats d'installation.</span><span lang="en">Technical quotations for tenders, user training, intervention reports and installation certificates.</span></p>
+    </article>
+  </div>
+</section>
+
+<section id="parcours">
+  <h2><span lang="fr">Parcours professionnel</span><span lang="en">Experience</span></h2>
+  <div class="tools">
+    <span><span lang="fr">Un dossier par parcours, un sous-dossier par structure. Cliquez pour ouvrir.</span><span lang="en">One folder per career path, one subfolder per organisation. Click to open.</span></span>
+    <span><button type="button" id="open-all"><span lang="fr">Tout ouvrir</span><span lang="en">Open all</span></button><button type="button" id="close-all"><span lang="fr">Tout fermer</span><span lang="en">Close all</span></button></span>
+  </div>
+
+  <details class="track" open>
+    <summary>
+      <svg viewBox="0 0 30 24" aria-hidden="true"><path d="M1 3a2 2 0 0 1 2-2h8l3 3h13a2 2 0 0 1 2 2v15a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      <span class="tt"><span lang="fr">Ingénierie biomédicale</span><span lang="en">Biomedical engineering</span></span>
+      <span class="ct"><span lang="fr">5 structures</span><span lang="en">5 organisations</span></span>
+    </summary>
+
+    <details class="org-item">
+      <summary>
+        <div class="hd"><span class="nm">ASTRE MEDICAL · Dakar</span><span class="rl"><span lang="fr">Ingénieur biomédical</span><span lang="en">Biomedical Engineer</span></span><span class="dt"><span lang="fr">Oct. 2026 – présent</span><span lang="en">Oct 2026 – present</span></span></div>
+      </summary>
+      <div class="body">
+        <h4><span lang="fr">Missions du poste</span><span lang="en">Role responsibilities</span></h4>
+        <ul>
+          <li><span lang="fr">Supervision de l'installation et de la mise en service des équipements biomédicaux.</span><span lang="en">Supervision of the installation and commissioning of biomedical equipment.</span></li>
+          <li><span lang="fr">Suivi technique et maintenance préventive et corrective du parc d'équipements.</span><span lang="en">Technical monitoring and preventive and corrective maintenance of the equipment fleet.</span></li>
+          <li><span lang="fr">Diagnostic des dysfonctionnements et proposition de solutions adaptées.</span><span lang="en">Fault diagnosis and proposal of suitable solutions.</span></li>
+          <li><span lang="fr">Participation aux études techniques et au choix des équipements.</span><span lang="en">Contribution to technical studies and equipment selection.</span></li>
+          <li><span lang="fr">Suivi des fournisseurs et coordination des interventions techniques.</span><span lang="en">Supplier follow-up and coordination of technical interventions.</span></li>
+          <li><span lang="fr">Formation et accompagnement des utilisateurs.</span><span lang="en">User training and support.</span></li>
+          <li><span lang="fr">Rédaction des rapports et de la documentation technique.</span><span lang="en">Drafting of reports and technical documentation.</span></li>
+          <li><span lang="fr">Organisation du suivi des interventions entre les équipes terrain, via un groupe de SAV.</span><span lang="en">Coordination of intervention follow-up between field teams through a dedicated service group.</span></li>
+        </ul>
+
+        <h4><span lang="fr">Polyclinique Internationale de Dakar · Laboratoire</span><span lang="en">Polyclinique Internationale de Dakar · Laboratory</span></h4>
+        <ul>
+          <li><span lang="fr">Installation, mise en service, suivi et maintenance des dispositifs médicaux de laboratoire.</span><span lang="en">Installation, commissioning, monitoring and maintenance of laboratory medical devices.</span></li>
+          <li><span lang="fr">Vérification de la conformité des offres fournisseurs au cahier des charges du laboratoire.</span><span lang="en">Compliance check of supplier offers against the laboratory's technical specifications.</span></li>
+          <li><span lang="fr">Recherche, évaluation et classement des fournisseurs pour préparer les dossiers d'appel d'offres (DAO).</span><span lang="en">Sourcing, evaluation and ranking of suppliers to prepare tender documents (DAO).</span></li>
+        </ul>
+        <div class="spec">
+          <div><b><span lang="fr">Hématologie et immunoanalyse</span><span lang="en">Haematology and immunoassay</span></b><span class="s"><span lang="fr">Automate d'hématologie Maccura F810. Automate d'immunoanalyse Maccura i800.</span><span lang="en">Maccura F810 haematology analyzer. Maccura i800 immunoassay analyzer.</span></span></div>
+          <div><b><span lang="fr">Immuno-hématologie</span><span lang="en">Immunohaematology</span></b><span class="s"><span lang="fr">Automate d'immuno-hématologie Bio-Rad IH-500 NEXT : groupes ABO/D, phénotypage Rh/K (et étendu), recherche d'anticorps irréguliers, test direct à l'antiglobuline, titration automatisée d'anticorps.</span><span lang="en">Bio-Rad IH-500 NEXT immunohaematology analyzer: ABO/D groups, Rh/K phenotyping (and extended), irregular antibody screening, direct antiglobulin test, automated antibody titration.</span></span></div>
+          <div><b><span lang="fr">Microbiologie et stérilisation</span><span lang="en">Microbiology and sterilization</span></b><span class="s"><span lang="fr">Hémocultures bioMérieux BACT/ALERT VIRTUO. Poste de sécurité microbiologique (barrière entre opérateur, environnement et échantillon par flux d'air et filtration). Étuve Thermo Scientific Heratherm (enceinte à température contrôlée, jusqu'à 300 °C, stérilisation à chaleur sèche possible selon le modèle). Autoclave Systec VE-100.</span><span lang="en">bioMérieux BACT/ALERT VIRTUO blood cultures. Microbiological safety cabinet (barrier between operator, environment and sample through airflow and filtration). Thermo Scientific Heratherm oven (temperature-controlled chamber, up to 300 °C, dry-heat sterilization depending on the model). Systec VE-100 autoclave.</span></span></div>
+          <div><b><span lang="fr">Biologie moléculaire</span><span lang="en">Molecular biology</span></b><span class="s"><span lang="fr">Cepheid GeneXpert XVI : PCR en temps réel automatisée (extraction, amplification et détection d'ADN/ARN) pour le diagnostic rapide, par exemple tuberculose, VIH, infections respiratoires.</span><span lang="en">Cepheid GeneXpert XVI: automated real-time PCR (nucleic acid extraction, amplification and detection) for rapid diagnosis, e.g. tuberculosis, HIV, respiratory infections.</span></span></div>
+          <div><b><span lang="fr">Cytologie et parasitologie</span><span lang="en">Cytology and parasitology</span></b><span class="s"><span lang="fr">Cytocentrifugeuse Epredia Cytospin 4 (dépôt de monocouches cellulaires sur lames). Automate de cytologie ILSA IDC20 (préparation, dont frottis cervico-vaginal). Microscope numérique automatisé miLab (NOUL) assisté par IA : frottis, coloration de type Romanowsky, imagerie et analyse pour le paludisme et la morphologie sanguine.</span><span lang="en">Epredia Cytospin 4 cytocentrifuge (cell monolayers deposited on slides). ILSA IDC20 cytology processor (preparation, including cervical smears). AI-assisted automated digital microscope miLab (NOUL): smear preparation, Romanowsky-type staining, imaging and analysis for malaria and blood morphology.</span></span></div>
+          <div><b><span lang="fr">Préparation et microscopie</span><span lang="en">Sample preparation and microscopy</span></b><span class="s"><span lang="fr">Centrifugeuse réfrigérée (séparation des constituants sanguins, culture cellulaire, microplaques, microbiologie ; la réfrigération préserve les échantillons thermosensibles). Microscopes optiques LED, microscope à fluorescence non motorisé avec caméra. Analyseur d'urine.</span><span lang="en">Refrigerated centrifuge (blood component separation, cell culture, microplates, microbiology; refrigeration protects heat-sensitive samples). LED optical microscopes, non-motorized fluorescence microscope with camera. Urine analyzer.</span></span></div>
+          <div><b><span lang="fr">Utilités de laboratoire</span><span lang="en">Laboratory utilities</span></b><span class="s"><span lang="fr">Distillateur d'eau LAUDA. Réfrigérateur de laboratoire Biobase BPR-5V588.</span><span lang="en">LAUDA water distiller. Biobase BPR-5V588 laboratory refrigerator.</span></span></div>
+        </div>
+        <h4><span lang="fr">Photos des équipements</span><span lang="en">Equipment photos</span></h4>
+        <div class="gal">
+          <button type="button" class="ph" data-full="img/maccura.jpg"><img src="img/maccura.jpg" width="897" height="1100" loading="lazy" alt="Automate Maccura"><span class="cap"><b><span lang="fr">Automate Maccura</span><span lang="en">Maccura analyzer</span></b><span lang="fr">Écran de travail : sélection des tests, réactifs, étalonnage, contrôle qualité.</span><span lang="en">Work screen: test selection, reagents, calibration, quality control.</span></span></button>
+          <button type="button" class="ph" data-full="img/ih500.jpg"><img src="img/ih500.jpg" width="1100" height="825" loading="lazy" alt="Bio-Rad IH-500 NEXT"><span class="cap"><b><span lang="fr">Bio-Rad IH-500 NEXT</span><span lang="en">Bio-Rad IH-500 NEXT</span></b><span lang="fr">Immuno-hématologie automatisée.</span><span lang="en">Automated immunohaematology.</span></span></button>
+          <button type="button" class="ph" data-full="img/virtuo.jpg"><img src="img/virtuo.jpg" width="687" height="1100" loading="lazy" alt="bioMérieux BACT/ALERT VIRTUO"><span class="cap"><b><span lang="fr">bioMérieux BACT/ALERT VIRTUO</span><span lang="en">bioMérieux BACT/ALERT VIRTUO</span></b><span lang="fr">Hémocultures.</span><span lang="en">Blood cultures.</span></span></button>
+          <button type="button" class="ph" data-full="img/genexpert.jpg"><img src="img/genexpert.jpg" width="1100" height="648" loading="lazy" alt="Cepheid GeneXpert"><span class="cap"><b><span lang="fr">Cepheid GeneXpert</span><span lang="en">Cepheid GeneXpert</span></b><span lang="fr">PCR en temps réel, 16 modules.</span><span lang="en">Real-time PCR, 16 modules.</span></span></button>
+          <button type="button" class="ph" data-full="img/idc20.jpg"><img src="img/idc20.jpg" width="948" height="897" loading="lazy" alt="ILSA IDC20"><span class="cap"><b><span lang="fr">ILSA IDC20</span><span lang="en">ILSA IDC20</span></b><span lang="fr">Automate de cytologie.</span><span lang="en">Cytology processor.</span></span></button>
+          <button type="button" class="ph" data-full="img/cytospin.jpg"><img src="img/cytospin.jpg" width="825" height="1100" loading="lazy" alt="Epredia Cytospin 4"><span class="cap"><b><span lang="fr">Epredia Cytospin 4</span><span lang="en">Epredia Cytospin 4</span></b><span lang="fr">Cytocentrifugeuse.</span><span lang="en">Cytocentrifuge.</span></span></button>
+          <button type="button" class="ph" data-full="img/milab.jpg"><img src="img/milab.jpg" width="825" height="1100" loading="lazy" alt="miLab (NOUL)"><span class="cap"><b><span lang="fr">miLab (NOUL)</span><span lang="en">miLab (NOUL)</span></b><span lang="fr">Microscope numérique automatisé.</span><span lang="en">Automated digital microscope.</span></span></button>
+          <button type="button" class="ph" data-full="img/psm.jpg"><img src="img/psm.jpg" width="825" height="1100" loading="lazy" alt="Poste de sécurité microbiologique Biobase"><span class="cap"><b><span lang="fr">Poste de sécurité microbiologique Biobase</span><span lang="en">Biobase biological safety cabinet</span></b><span lang="fr">Barrière opérateur, environnement, échantillon.</span><span lang="en">Operator, environment and sample barrier.</span></span></button>
+          <button type="button" class="ph" data-full="img/systec.jpg"><img src="img/systec.jpg" width="825" height="1100" loading="lazy" alt="Autoclave Systec VE-100"><span class="cap"><b><span lang="fr">Autoclave Systec VE-100</span><span lang="en">Systec VE-100 autoclave</span></b><span lang="fr">Stérilisation à la vapeur.</span><span lang="en">Steam sterilization.</span></span></button>
+          <button type="button" class="ph" data-full="img/heratherm.jpg"><img src="img/heratherm.jpg" width="825" height="1100" loading="lazy" alt="Thermo Scientific Heratherm"><span class="cap"><b><span lang="fr">Thermo Scientific Heratherm</span><span lang="en">Thermo Scientific Heratherm</span></b><span lang="fr">Étuve à température contrôlée.</span><span lang="en">Temperature-controlled oven.</span></span></button>
+          <button type="button" class="ph" data-full="img/lauda.jpg"><img src="img/lauda.jpg" width="927" height="988" loading="lazy" alt="Distillateur d'eau LAUDA"><span class="cap"><b><span lang="fr">Distillateur d'eau LAUDA</span><span lang="en">LAUDA water distiller</span></b><span lang="fr">Eau distillée pour le laboratoire.</span><span lang="en">Distilled water for the laboratory.</span></span></button>
+          <button type="button" class="ph" data-full="img/refrigerateurs.jpg"><img src="img/refrigerateurs.jpg" width="1100" height="825" loading="lazy" alt="Réfrigérateurs de laboratoire"><span class="cap"><b><span lang="fr">Réfrigérateurs de laboratoire</span><span lang="en">Laboratory refrigerators</span></b><span lang="fr">Gamme Biobase et M390FR.</span><span lang="en">Biobase and M390FR range.</span></span></button>
+        </div>
+      </div>
+    </details>
+
+    <details class="org-item" open>
+      <summary>
+        <div class="hd"><span class="nm">STE Sénégal · Sciences &amp; Technology Engineering</span><span class="rl"><span lang="fr">Ingénieur biomédical · Service technique</span><span lang="en">Biomedical Engineer · Technical service</span></span><span class="dt"><span lang="fr">Juin 2025 – 2026</span><span lang="en">Jun 2025 – 2026</span></span></div>
+      </summary>
+      <div class="body">
+        <ul>
+          <li><span lang="fr">Pilotage du SAV sur plus de 15 hôpitaux régionaux et 20 cliniques.</span><span lang="en">Led after-sales service across 15+ regional hospitals and 20 clinics.</span></li>
+          <li><span lang="fr">Installation : colonnes d'endoscopie Karl Storz et Fujifilm, système d'épreuve d'effort Schiller, échographes CHISON, fauteuils dentaires, scialytiques, tables opératoires.</span><span lang="en">Installations: Karl Storz and Fujifilm endoscopy towers, Schiller stress-test system, CHISON ultrasound, dental chairs, surgical lights, operating tables.</span></li>
+          <li><span lang="fr">Cotations techniques pour appels d'offres (D.A.O) et formation du personnel utilisateur.</span><span lang="en">Technical quotations for tenders and training of end-user staff.</span></li>
+          <li><span lang="fr">Rédaction de protocoles de maintenance préventive pour des clients institutionnels.</span><span lang="en">Writing preventive maintenance protocols for institutional clients.</span></li>
+        </ul>
+
+        <h4><span lang="fr">Interventions par spécialité</span><span lang="en">Interventions by specialty</span></h4>
+        <div class="spec">
+          <div><b><span lang="fr">Endoscopie</span><span lang="en">Endoscopy</span></b><span class="s"><span lang="fr">Colonne complète Karl Storz et Fujifilm (souple) : hôpitaux de Louga, Principal de Dakar, Grand-Yoff, Thiès et Saint-Louis.</span><span lang="en">Complete Karl Storz and Fujifilm (flexible) tower: hospitals of Louga, Principal de Dakar, Grand-Yoff, Thiès and Saint-Louis.</span></span></div>
+          <div><b><span lang="fr">Bloc opératoire</span><span lang="en">Operating theatre</span></b><span class="s"><span lang="fr">Tables opératoires : UCAD, hôpitaux de Saint-Louis et de Pikine. Colonne vidéo urologie et laparoscopie : Grand-Yoff.</span><span lang="en">Operating tables: UCAD, Saint-Louis and Pikine hospitals. Urology and laparoscopy video tower: Grand-Yoff.</span></span></div>
+          <div><b><span lang="fr">Cardiologie</span><span lang="en">Cardiology</span></b><span class="s"><span lang="fr">Tapis d'épreuve d'effort Schiller et Holter ECG : Clinique Cardio, hôpital Dalal Jamm.</span><span lang="en">Schiller stress-test treadmill and Holter ECG: Clinique Cardio, Dalal Jamm hospital.</span></span></div>
+          <div><b><span lang="fr">Exploration fonctionnelle</span><span lang="en">Functional exploration</span></b><span class="s"><span lang="fr">Spirométrie : Clinique Cardio 24, hôpital régional de Thiès. Services d'exploration fonctionnelle : Hôpital Principal, Grand-Yoff.</span><span lang="en">Spirometry: Clinique Cardio 24, Thiès regional hospital. Functional exploration units: Hôpital Principal, Grand-Yoff.</span></span></div>
+          <div><b><span lang="fr">ORL et orthopédie</span><span lang="en">ENT and orthopaedics</span></b><span class="s"><span lang="fr">Fourniture et installation du service ORL à Thiès. Moteur orthopédique à Louga.</span><span lang="en">Supply and installation of the ENT unit in Thiès. Orthopaedic motor in Louga.</span></span></div>
+          <div><b><span lang="fr">Contrat de maintenance</span><span lang="en">Maintenance contract</span></b><span class="s"><span lang="fr">Hôpital Principal de Dakar.</span><span lang="en">Hôpital Principal de Dakar.</span></span></div>
+        </div>
+
+        <h4><span lang="fr">Protocole de maintenance préventive</span><span lang="en">Preventive maintenance protocol</span></h4>
+        <div class="proto">
+          <p class="pt">ZOLL AED PLUS · <span lang="fr">défibrillateur automatisé externe</span><span lang="en">automated external defibrillator</span></p>
+          <p class="pm"><span lang="fr">Client institutionnel à Dakar. Périodicité annuelle, avec inspection visuelle mensuelle par l'utilisateur. Durée totale d'environ 1 h 30.</span><span lang="en">Institutional client in Dakar. Annual frequency, with a monthly visual check by the user. Total duration of about 1 h 30.</span></p>
+          <div class="steps">
+            <span><span lang="fr">Inspection visuelle</span><span lang="en">Visual inspection</span> 10 min</span>
+            <span><span lang="fr">Consommables et dates</span><span lang="en">Consumables and dates</span> 10 min</span>
+            <span><span lang="fr">Tests fonctionnels</span><span lang="en">Functional tests</span> 15 min</span>
+            <span><span lang="fr">Autotests et batterie</span><span lang="en">Self-tests and battery</span> 15 min</span>
+            <span><span lang="fr">Décharge et mesures électriques</span><span lang="en">Discharge and electrical measurements</span> 20 min</span>
+            <span><span lang="fr">Mise à jour et calibration</span><span lang="en">Update and calibration</span> 15 min</span>
+            <span><span lang="fr">Tests finaux</span><span lang="en">Final tests</span> 5 min</span>
+          </div>
+          <div class="tw">
+            <table>
+              <thead><tr><th><span lang="fr">Test de performance</span><span lang="en">Performance test</span></th><th><span lang="fr">Réglage du simulateur</span><span lang="en">Simulator setting</span></th><th><span lang="fr">Critère d'acceptation</span><span lang="en">Acceptance criterion</span></th></tr></thead>
+              <tbody>
+                <tr><td><span lang="fr">D.1 Reconnaissance FV</span><span lang="en">D.1 VF recognition</span></td><td><span lang="fr">FV grossière, amplitude &gt; 0,2 mV</span><span lang="en">Coarse VF, amplitude &gt; 0.2 mV</span></td><td><span lang="fr">Annonce « Choc conseillé », charge du condensateur audible</span><span lang="en">"Shock advised" prompt, capacitor charge audible</span></td></tr>
+                <tr><td><span lang="fr">D.2 Énergie du choc adulte</span><span lang="en">D.2 Adult shock energy</span></td><td><span lang="fr">Charge de 50 Ω, mode énergie</span><span lang="en">50 Ω load, energy mode</span></td><td>150 J ± 15 % (127,5 – 172,5 J)</td></tr>
+                <tr><td><span lang="fr">D.3 Rythme sinusal (NSR)</span><span lang="en">D.3 Normal sinus rhythm (NSR)</span></td><td>80 bpm</td><td><span lang="fr">« Choc non conseillé », aucune charge du condensateur</span><span lang="en">"No shock advised", capacitor does not charge</span></td></tr>
+                <tr><td><span lang="fr">D.4 Asystolie</span><span lang="en">D.4 Asystole</span></td><td><span lang="fr">Ligne plate</span><span lang="en">Flat line</span></td><td><span lang="fr">« Choc non conseillé », invitation à débuter la RCP</span><span lang="en">"No shock advised", prompt to start CPR</span></td></tr>
+                <tr><td><span lang="fr">D.5 Temps de charge</span><span lang="en">D.5 Charge time</span></td><td><span lang="fr">Batterie pleine, chronomètre</span><span lang="en">Full battery, stopwatch</span></td><td><span lang="fr">Moins de 10 s pour atteindre 150 J</span><span lang="en">Under 10 s to reach 150 J</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="pm"><span lang="fr">Conclusion du rapport : appareil conforme (remis en service) ou non conforme (réparation ou remplacement de pièces), avec observations et mise à jour du carnet de maintenance.</span><span lang="en">Report conclusion: unit compliant (returned to service) or non-compliant (repair or parts replacement), with observations and update of the maintenance log.</span></p>
+        </div>
+      </div>
+    </details>
+
+    <details class="org-item">
+      <summary>
+        <div class="hd"><span class="nm">Paramed Services Ltd</span><span class="rl"><span lang="fr">Stagiaire ingénieur biomédical</span><span lang="en">Biomedical Engineer Intern</span></span><span class="dt"><span lang="fr">16 déc. 2024 – 16 juin 2025</span><span lang="en">16 Dec 2024 – 16 Jun 2025</span></span></div>
+      </summary>
+      <div class="body">
+        <h4><span lang="fr">Installations</span><span lang="en">Installations</span></h4>
+        <ul>
+          <li><span lang="fr">Mammographe Philips Sectra (unité de mammographie, générateur haute tension, table et console) ; revue préalable des manuels d'utilisation.</span><span lang="en">Philips Sectra mammography system (mammography unit, high-voltage generator, table and console); prior review of the user manuals.</span></li>
+          <li><span lang="fr">Échographe Samsung Medison WS80A à la clinique Pasteur ; échographes et table de radiologie numérique télécommandée à la clinique Al-Amine (Sacré-Cœur).</span><span lang="en">Samsung Medison WS80A ultrasound at Clinique Pasteur; ultrasound and remote-controlled digital radiography table at Clinique Al-Amine (Sacré-Cœur).</span></li>
+          <li><span lang="fr">Reprographe Fujifilm Drypix ; système HLA-B27 par PCR en temps réel (thermocycleur SACycler-96R, kit d'extraction d'ADN, kit HLA).</span><span lang="en">Fujifilm Drypix film printer; HLA-B27 real-time PCR system (SACycler-96R thermocycler, DNA extraction kit, HLA kit).</span></li>
+          <li><span lang="fr">Scanner Toshiba Asteion, échographes GE Voluson S6, radiographie Fujifilm FDR EVO, numériseurs FCR Capsula, panoramique Newtom Go.</span><span lang="en">Toshiba Asteion CT, GE Voluson S6 ultrasound, Fujifilm FDR EVO radiography, FCR Capsula digitizers, Newtom Go panoramic.</span></li>
+        </ul>
+        <h4><span lang="fr">Maintenance corrective</span><span lang="en">Corrective maintenance</span></h4>
+        <ul>
+          <li><span lang="fr"><b>Échographe Toshiba Exio, clinique Cléo, Mermoz :</b> clavier tactile hors service, causé par une mauvaise interconnexion des câbles dans le module PC et un encrassement par la poussière. Dépoussiérage et remise des connexions dans leur configuration d'origine. Une autre intervention sur un échographe Toshiba portait sur un problème logiciel.</span><span lang="en"><b>Toshiba Exio ultrasound, Clinique Cléo, Mermoz:</b> touch keyboard out of service, caused by poor cable interconnection in the PC module and dust build-up. Cleaning and restoration of the connections to their original configuration. Another Toshiba ultrasound intervention concerned a software fault.</span></li>
+          <li><span lang="fr"><b>Reprographe Fujifilm Drypix 7000 :</b> panne électromécanique, rouleau (tambour) lié à l'engrenage. Permutation du bloc et du monobloc avec un reprographe compatible, remplacement du composant défectueux, essais et remise en service.</span><span lang="en"><b>Fujifilm Drypix 7000 film printer:</b> electromechanical fault, roller (drum) linked to the gear. Swap of the block and monoblock with a compatible printer, replacement of the faulty component, testing and return to service.</span></li>
+          <li><span lang="fr"><b>Numériseur FCR Capsula XL II :</b> défaut mécanique, remplacement des ventouses du système de numérisation.</span><span lang="en"><b>FCR Capsula XL II digitizer:</b> mechanical fault, replacement of the suction cups of the scanning system.</span></li>
+          <li><span lang="fr">Remplacement de l'imprimante de l'échographe Samsung (clinique Pasteur) le 10/01/2025 ; remise des capots de la radiographie numérique d'Al-Amine à un prestataire pour peinture.</span><span lang="en">Replacement of the Samsung ultrasound printer (Clinique Pasteur) on 10 Jan 2025; covers of the Al-Amine digital radiography unit handed to a contractor for repainting.</span></li>
+        </ul>
+        <h4><span lang="fr">Maintenance préventive et gestion technique</span><span lang="en">Preventive maintenance and technical management</span></h4>
+        <ul>
+          <li><span lang="fr">Maintenance préventive de l'échographe Samsung Medison Accuvix XG au poste de santé de Sandiara (Thiès).</span><span lang="en">Preventive maintenance of the Samsung Medison Accuvix XG ultrasound at the Sandiara health post (Thiès).</span></li>
+          <li><span lang="fr">Gestion des documents techniques : rapports d'intervention, bons de livraison technique, certificats d'installation et de satisfaction.</span><span lang="en">Technical paperwork: intervention reports, technical delivery notes, installation and satisfaction certificates.</span></li>
+          <li><span lang="fr">Formation des utilisateurs et gestion du SAV.</span><span lang="en">User training and after-sales service.</span></li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="org-item">
+      <summary>
+        <div class="hd"><span class="nm">CNHEAR · Hôpital pour Enfants Albert Royer</span><span class="rl"><span lang="fr">Stagiaire technicien biomédical</span><span lang="en">Biomedical Technician Intern</span></span><span class="dt"><span lang="fr">4 mars – 19 avril 2024</span><span lang="en">4 Mar – 19 Apr 2024</span></span></div>
+      </summary>
+      <div class="body">
+        <h4><span lang="fr">Installation et formation</span><span lang="en">Installation and training</span></h4>
+        <ul>
+          <li><span lang="fr">Automate d'hématologie : installation et formation à l'utilisation avec le fournisseur Technologies Services.</span><span lang="en">Haematology analyzer: installation and user training with the supplier Technologies Services.</span></li>
+          <li><span lang="fr">Automate de biochimie : tests et installation avec le SAV ; dosage des immunoglobulines (IgE, IgM, IgG) et des hormones (FSH, LH). Principe de mesure : loi de Beer-Lambert, l'absorption de la lumière dépend de la concentration de la solution et de la longueur du trajet optique.</span><span lang="en">Biochemistry analyzer: testing and installation with the after-sales team; measurement of immunoglobulins (IgE, IgM, IgG) and hormones (FSH, LH). Measurement principle: Beer-Lambert law, light absorption depends on the solution concentration and the optical path length.</span></li>
+          <li><span lang="fr">Installation d'un respirateur de réanimation.</span><span lang="en">Installation of an ICU ventilator.</span></li>
+        </ul>
+        <h4><span lang="fr">Maintenance</span><span lang="en">Maintenance</span></h4>
+        <ul>
+          <li><span lang="fr"><b>Autoclave de néonatologie :</b> contrôle de la pression d'eau du surpresseur relié à l'autoclave.</span><span lang="en"><b>Neonatology autoclave:</b> check of the water pressure of the booster pump connected to the autoclave.</span></li>
+          <li><span lang="fr"><b>Autoclave du bloc opératoire :</b> réglage des fuites de vapeur au niveau de la porte.</span><span lang="en"><b>Operating theatre autoclave:</b> adjustment of steam leaks at the door.</span></li>
+          <li><span lang="fr"><b>Fauteuil dentaire :</b> rétablissement de l'étanchéité de la tuyauterie du compresseur d'aspiration.</span><span lang="en"><b>Dental chair:</b> restoring the tightness of the suction compressor piping.</span></li>
+          <li><span lang="fr"><b>Centrale à air médical :</b> remplacement du contacteur et du module défectueux du compresseur A.</span><span lang="en"><b>Medical air plant:</b> replacement of the faulty contactor and module on compressor A.</span></li>
+          <li><span lang="fr"><b>Centrale d'oxygène :</b> remplissage des bouteilles d'O₂ pour le stock des différents pavillons ; étude du schéma de fonctionnement des concentrateurs d'O₂.</span><span lang="en"><b>Oxygen plant:</b> refilling of O₂ cylinders for the stock of the different pavilions; study of the oxygen concentrator operating diagram.</span></li>
+          <li><span lang="fr">Incubateur néonatal, pousse-seringue ; amplificateur de brillance (arceau mobile Perlove HF).</span><span lang="en">Neonatal incubator, syringe pump; image intensifier (Perlove HF mobile C-arm).</span></li>
+          <li><span lang="fr">Mesures électriques : courant de fuite, régime de terre.</span><span lang="en">Electrical measurements: leakage current, earthing system.</span></li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="org-item">
+      <summary>
+        <div class="hd"><span class="nm">CURY · Centre des Urgences de Yaoundé</span><span class="rl"><span lang="fr">Stagiaire technicien biomédical</span><span lang="en">Biomedical Technician Intern</span></span><span class="dt"><span lang="fr">1er août – 30 sept. 2023</span><span lang="en">1 Aug – 30 Sep 2023</span></span></div>
+      </summary>
+      <div class="body">
+        <h4><span lang="fr">Infrastructures techniques</span><span lang="en">Technical infrastructure</span></h4>
+        <ul>
+          <li><span lang="fr">Alimentation électrique : transformateur 15 000 V, inverseur automatique entre le réseau et le groupe électrogène Perkins (basculement automatique en cas de coupure, continuité 24 h/24, 7 j/7), groupe de 4 batteries de 100 A.</span><span lang="en">Power supply: 15,000 V transformer, automatic changeover switch between the mains and the Perkins generator (automatic switching on power failure, 24/7 continuity), bank of four 100 A batteries.</span></li>
+          <li><span lang="fr">Gaz médicaux : centrale d'oxygène à alimentation automatique (patients oxygéno-dépendants et bloc opératoire), compresseur d'air, prises O₂, vide et air médical (traumatologie).</span><span lang="en">Medical gases: automatic oxygen plant (oxygen-dependent patients and operating theatre), air compressor, O₂, vacuum and medical air outlets (trauma unit).</span></li>
+          <li><span lang="fr">Centrale à eau alimentant le laboratoire (distillation) et le bloc opératoire, sous supervision du service de biomaintenance : maintenance corrective des surpresseurs (remplacement des vessies, contrôle de la stabilité de la pression).</span><span lang="en">Water plant supplying the laboratory (distillation) and the operating theatre, supervised by the biomaintenance department: corrective maintenance of the booster pumps (bladder replacement, pressure stability check).</span></li>
+        </ul>
+        <h4><span lang="fr">Équipements médicaux</span><span lang="en">Medical equipment</span></h4>
+        <ul>
+          <li><span lang="fr"><b>Bistouri électrique Promed :</b> maintenance corrective après une panne des plaques internes pendant une intervention gastro-entérologique au bloc opératoire.</span><span lang="en"><b>Promed electrosurgical unit:</b> corrective maintenance after an internal plate failure during a gastroenterology procedure in the operating theatre.</span></li>
+          <li><span lang="fr"><b>Autoclave à chaleur humide :</b> stérilisation des instruments chirurgicaux et des tenues, cycle de 18 minutes.</span><span lang="en"><b>Steam autoclave:</b> sterilization of surgical instruments and gowns, 18-minute cycle.</span></li>
+          <li><span lang="fr">Radiologie (Stephanix, table rotative), brancard Spencer (dépannage des roues), endoscope, échographe, réanimation.</span><span lang="en">Radiology (Stephanix, rotating table), Spencer stretcher (wheel repair), endoscope, ultrasound, intensive care.</span></li>
+          <li><span lang="fr">Évaluation de la durée de vie des dispositifs ; gestion de stock.</span><span lang="en">Lifespan assessment of devices; stock management.</span></li>
+        </ul>
+        <p class="pm" style="color:var(--muted);font-size:.92rem;margin:0"><span lang="fr">Ce stage m'a appris à gérer le stress et la pression des services hospitaliers, à raisonner de façon scientifique en temps court, et à former le personnel au bon usage des appareils (sécurité, fiabilité).</span><span lang="en">This internship taught me to manage stress and pressure in hospital units, to reason scientifically within short timeframes, and to train staff in the proper use of equipment (safety, reliability).</span></p>
+      </div>
+    </details>
+  </details>
+
+  <details class="track" open>
+    <summary>
+      <svg viewBox="0 0 30 24" aria-hidden="true"><path d="M1 3a2 2 0 0 1 2-2h8l3 3h13a2 2 0 0 1 2 2v15a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      <span class="tt">EdTech</span>
+      <span class="ct"><span lang="fr">1 structure</span><span lang="en">1 organisation</span></span>
+    </summary>
+
+    <details class="org-item">
+      <summary>
+        <div class="hd"><span class="nm">STEAMtastic · Dakar</span><span class="rl"><span lang="fr">Formateur et Marketing Strategist</span><span lang="en">Trainer and Marketing Strategist</span></span><span class="dt"><span lang="fr">Sept. 2024 – présent</span><span lang="en">Sep 2024 – present</span></span></div>
+      </summary>
+      <div class="body">
+        <ul>
+          <li><span lang="fr">Plus de 3000 jeunes formés en collèges et lycées : codage Arduino, IA, robotique, prise de parole (Dakar, Thiès, Sédhiou, Matam, Louga…).</span><span lang="en">3,000+ students trained in middle and high schools: Arduino coding, AI, robotics, public speaking (Dakar, Thiès, Sédhiou, Matam, Louga…).</span></li>
+          <li><span lang="fr">Formateur régional du programme BIDEWsteam, de la 1re à la 3e édition, avec le soutien de Wave Sénégal.</span><span lang="en">Regional trainer for the BIDEWsteam programme, editions 1 to 3, supported by Wave Senegal.</span></li>
+          <li><span lang="fr">Formateur du programme Steam'INNOV déployé à l'ambassade des États-Unis au Sénégal.</span><span lang="en">Trainer for the Steam'INNOV programme delivered at the US Embassy in Senegal.</span></li>
+          <li><span lang="fr">Marketing Strategist sur le projet de plateforme numérique avec la Mastercard Foundation (programme EtriLabs).</span><span lang="en">Marketing Strategist on the digital platform project with the Mastercard Foundation (EtriLabs programme).</span></li>
+        </ul>
+      </div>
+    </details>
+  </details>
+</section>
+
+<section id="cas">
+  <h2><span lang="fr">Cas de dépannage</span><span lang="en">Service cases</span></h2>
+  <div class="cases">
+    <div class="case">
+      <div class="tag"><span lang="fr">Électrochirurgie</span><span lang="en">Electrosurgery</span></div>
+      <h3>Karl Storz AUTOCON III 400</h3>
+      <p><b><span lang="fr">Panne :</span><span lang="en">Fault:</span></b> <span lang="fr">mode Spray désactivé.</span><span lang="en">Spray mode disabled.</span></p>
+      <p><b><span lang="fr">Démarche :</span><span lang="en">Approach:</span></b> <span lang="fr">diagnostic sur site, puis application des consignes du support constructeur Karl Storz.</span><span lang="en">on-site diagnosis, then application of the manufacturer's Karl Storz support instructions.</span></p>
+    </div>
+    <div class="case">
+      <div class="tag"><span lang="fr">Radiologie mobile</span><span lang="en">Mobile radiography</span></div>
+      <h3>Villa Sistemi Medicali Visitor T30 R</h3>
+      <p><b><span lang="fr">Panne :</span><span lang="en">Fault:</span></b> <span lang="fr">problème de charge des condensateurs et alarme démarreur.</span><span lang="en">capacitor charging problem and starter alarm.</span></p>
+      <p><b><span lang="fr">Démarche :</span><span lang="en">Approach:</span></b> <span lang="fr">contrôle du circuit de charge et de la chaîne de démarrage, suivi de l'intervention avec l'équipe SAV.</span><span lang="en">check of the charging circuit and the starter chain, intervention followed up with the service team.</span></p>
+    </div>
+  </div>
+</section>
+
+<section id="formation">
+  <h2><span lang="fr">Formation, certifications, outils</span><span lang="en">Education, certifications, tools</span></h2>
+  <div class="cols">
+    <div>
+      <h3><span lang="fr">Formation</span><span lang="en">Education</span></h3>
+      <ul>
+        <li><span lang="fr">Master en Technologies Intégrées, spécialité Génie biomédical</span><span lang="en">Master's in Integrated Technologies, Biomedical Engineering</span><small>UPOA · 2023–2025 · <span lang="fr">Mention Très Bien</span><span lang="en">First-class honours (Très Bien)</span></small></li>
+        <li><span lang="fr">Licence en Technologies Intégrées</span><span lang="en">Bachelor's in Integrated Technologies</span><small>UPOA · 2020–2023</small></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Certifications</h3>
+      <ul>
+        <li>Schiller<small><span lang="fr">Environnement, matériel et logiciel, maintenance des produits · mars 2026</span><span lang="en">Environment, hardware and software, product maintenance · Mar 2026</span></small></li>
+        <li>Karl Storz<small><span lang="fr">Service Business Glass &amp; Steel, lancement OR1 X PRO · avril 2026</span><span lang="en">Service Business Glass &amp; Steel, OR1 X PRO product launch · Apr 2026</span></small></li>
+        <li>Jaeger Medical GmbH<small><span lang="fr">Spiromètres Vyntus BODY, ONE, IOS, Pneumo, Spiro, Walk, CPX avec ECG et Canopy · sept. 2025</span><span lang="en">Vyntus BODY, ONE, IOS, Pneumo, Spiro, Walk, CPX spirometers with ECG and Canopy · Sep 2025</span></small></li>
+        <li>Tech Global University Andorre<small><span lang="fr">Analyse et capture des images biomédicales · déc. 2024 – mars 2025</span><span lang="en">Biomedical image analysis and capture · Dec 2024 – Mar 2025</span></small></li>
+        <li>INRS</li>
+      </ul>
+    </div>
+    <div>
+      <h3><span lang="fr">Langues</span><span lang="en">Languages</span></h3>
+      <ul>
+        <li><span lang="fr">Français</span><span lang="en">French</span><small><span lang="fr">Lu, parlé, écrit</span><span lang="en">Read, spoken, written</span></small></li>
+        <li><span lang="fr">Anglais</span><span lang="en">English</span><small><span lang="fr">Lu, parlé, écrit</span><span lang="en">Read, spoken, written</span></small></li>
+      </ul>
+    </div>
+  </div>
+  <h3 style="font-family:var(--f-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:2rem 0 .7rem"><span lang="fr">Outils</span><span lang="en">Tools</span></h3>
+  <div class="chips">
+    <span>GANTT</span><span>PERT</span><span>MS Project</span><span>Arduino</span><span>HTML / CSS</span><span>Python</span><span>Matlab</span><span>SolidWorks</span><span>Tinkercad</span><span>MS Office</span><span>Canva</span>
+  </div>
+</section>
+
+<div class="contact" id="contact">
+  <h2><span lang="fr">Parlons de votre projet</span><span lang="en">Let's talk about your project</span></h2>
+  <div class="rows">
+    <div class="row"><span id="v-mail">cyroviaazad@gmail.com</span><button type="button" data-copy="v-mail"><span lang="fr">Copier</span><span lang="en">Copy</span></button></div>
+    <div class="row"><span id="v-tel">+221 78 466 84 40</span><button type="button" data-copy="v-tel"><span lang="fr">Copier</span><span lang="en">Copy</span></button></div>
+    <div class="row"><span>linkedin.com/in/royal-bebey-azad-84a7a2303</span><a href="https://linkedin.com/in/royal-bebey-azad-84a7a2303" target="_blank" rel="noopener">LinkedIn</a></div>
+    <div class="row"><span>Ngor Almadies, Dakar</span></div>
+  </div>
+</div>
+
+<footer>© 2026 Royal Azad</footer>
+</div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo"><button type="button" id="lb-x">&#10005;</button><img id="lb-img" alt=""><p id="lb-cap"></p></div>
+<script>
+(function(){
+  var b=document.body, fr=document.getElementById('bfr'), en=document.getElementById('ben');
+  function set(l){
+    b.setAttribute('data-l',l);
+    document.documentElement.lang=l;
+    fr.setAttribute('aria-pressed',String(l==='fr'));
+    en.setAttribute('aria-pressed',String(l==='en'));
+    try{localStorage.setItem('portfolio-lang',l)}catch(e){}
+  }
+  fr.addEventListener('click',function(){set('fr')});
+  en.addEventListener('click',function(){set('en')});
+  try{var s=localStorage.getItem('portfolio-lang'); if(s==='en'||s==='fr') set(s);}catch(e){}
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var el=document.getElementById(btn.getAttribute('data-copy'));
+      var done=function(){var o=btn.innerHTML;btn.textContent='OK';setTimeout(function(){btn.innerHTML=o},1200)};
+      var sel=function(){var r=document.createRange();r.selectNodeContents(el);var s=window.getSelection();s.removeAllRanges();s.addRange(r)};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(el.textContent).then(done,sel)}else{sel()}
+    });
+  });
+  // Dossiers : tout ouvrir / tout fermer
+  var all=function(open){document.querySelectorAll('#parcours details').forEach(function(d){d.open=open})};
+  document.getElementById('open-all').addEventListener('click',function(){all(true)});
+  document.getElementById('close-all').addEventListener('click',function(){all(false)});
+
+  // Menu : défilement, surlignage de la section, lien actif
+  var links=[].slice.call(document.querySelectorAll('.bar nav a'));
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function mark(id){links.forEach(function(a){a.setAttribute('aria-current',String(a.getAttribute('href')==='#'+id))})}
+  links.forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href').slice(1), t=document.getElementById(id);
+      if(!t) return;
+      e.preventDefault();
+      mark(id);
+      t.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+      t.classList.remove('flash'); void t.offsetWidth; t.classList.add('flash');
+      setTimeout(function(){t.classList.remove('flash')},1400);
+    });
+  });
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){if(en.isIntersecting) mark(en.target.id)});
+    },{rootMargin:'-35% 0px -55% 0px'});
+    links.forEach(function(a){var t=document.getElementById(a.getAttribute('href').slice(1)); if(t) io.observe(t)});
+  }
+  // Photos : agrandissement au clic
+  var lb=document.getElementById('lb'), lbi=document.getElementById('lb-img'), lbc=document.getElementById('lb-cap');
+  function closeLb(){lb.hidden=true;lbi.removeAttribute('src')}
+  document.querySelectorAll('.ph').forEach(function(b){
+    b.addEventListener('click',function(){
+      lbi.src=b.getAttribute('data-full'); lbi.alt=b.querySelector('img').alt;
+      var l=b.closest('body').getAttribute('data-l');
+      var c=b.querySelector('.cap b span[lang="'+l+'"]'); lbc.textContent=c?c.textContent:'';
+      lb.hidden=false;
+    });
+  });
+  lb.addEventListener('click',closeLb);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden) closeLb()});
+})();
+</script>
+
+</body></html>
