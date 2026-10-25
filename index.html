@@ -1,15 +1,6 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><meta name="description" content="Royal Azad — Biomedical Engineer specializing in medical equipment installation, commissioning, preventive and corrective maintenance, technical service and user training in West Africa.">
-<meta name="author" content="Royal Azad">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0B7C80">
-<link rel="canonical" href="https://royalazad.github.io/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Royal Azad — Biomedical Engineer">
-<meta property="og:description" content="Biomedical engineering portfolio — medical equipment service, maintenance, installation and user training in West Africa.">
-<meta property="og:url" content="https://royalazad.github.io/">
-<meta name="twitter:card" content="summary">
-<title>Royal Azad — Biomedical Engineer | Portfolio</title>
-</head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Royal Azad Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: single column "service record" — hero with ECG trace, then ruled records like an intervention log */
@@ -153,21 +144,15 @@ h2{position:relative}
 }
 @media (prefers-reduced-motion:reduce){.flash h2::after{animation:hold 1.2s forwards}@keyframes hold{0%,70%{opacity:1}100%{opacity:0}}}
 
-.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5rem,1fr));gap:.7rem}
-.ph{display:flex;flex-direction:column;text-align:left;padding:0;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg);cursor:zoom-in;overflow:hidden;font:inherit;min-width:0}
-.ph img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--accent-soft)}
-.ph .cap{display:flex;flex-direction:column;padding:.5rem .6rem .6rem;gap:.1rem;font-size:.78rem;color:var(--muted);line-height:1.35}
-.ph .cap b{color:var(--fg);font-weight:500;font-size:.82rem}
-.ph:hover{border-color:var(--accent)}
-.lb{position:fixed;inset:0;z-index:50;background:rgba(6,20,22,.9);display:flex;align-items:center;justify-content:center;padding:1rem;flex-direction:column;gap:.6rem}
-.lb[hidden]{display:none}
-.lb img{max-width:100%;max-height:82vh;object-fit:contain;border-radius:4px;background:#000}
-.lb p{margin:0;color:#E4F0F0;font-size:.9rem;text-align:center}
-.lb button{position:absolute;top:max(.8rem,env(safe-area-inset-top,0px));right:max(.8rem,env(safe-area-inset-right,0px));font:inherit;background:#fff;color:#0F2528;border:0;border-radius:4px;padding:.4rem .8rem;cursor:pointer}
 
-.hero-chips{margin:0 0 1.5rem;max-width:52rem}
-.hero-chips span{font-size:.76rem}
-@media (max-width:640px){.hero-chips{gap:.35rem}.hero-chips span{font-size:.7rem}}
+/* Profil : quatre spécialités, description, profil technique */
+.spec4{list-style:none;margin:0 0 1.8rem;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(12.5rem,1fr));gap:.7rem}
+.spec4 li{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:.8rem 1rem;font-weight:500;font-size:.95rem;line-height:1.35}
+.spec4 b{display:block;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.08em;color:var(--accent);margin-bottom:.25rem;font-weight:500}
+.prose{max-width:44rem;margin:0 0 2rem}
+.prose p{margin:0 0 .9rem;color:var(--muted)}
+.prose p:first-child{color:var(--fg);font-size:1.08rem}
+.subh{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:2rem 0 .7rem}
 </style>
 
 <body data-l="fr">
@@ -175,6 +160,7 @@ h2{position:relative}
 
 <header class="bar">
   <nav>
+    <a href="#profil"><span lang="fr">Profil</span><span lang="en">Profile</span></a>
     <a href="#expertise"><span lang="fr">Expertise</span><span lang="en">Expertise</span></a>
     <a href="#parcours"><span lang="fr">Parcours</span><span lang="en">Experience</span></a>
     <a href="#cas"><span lang="fr">Cas SAV</span><span lang="en">Service cases</span></a>
@@ -188,19 +174,19 @@ h2{position:relative}
 </header>
 
 <div class="hero">
-  <div class="eyebrow"><span lang="fr">Ingénierie biomédicale · Dakar, Sénégal</span><span lang="en">Biomedical engineering · Dakar, Senegal</span></div>
+  <div class="eyebrow"><span lang="fr">Dakar, Sénégal · Afrique de l'Ouest et du Centre</span><span lang="en">Dakar, Senegal · West &amp; Central Africa</span></div>
   <h1>Royal Azad</h1>
-  <p class="role"><span lang="fr">Ingénieur biomédical · Maintenance &amp; Service des équipements médicaux</span><span lang="en">Biomedical Engineer · Medical Equipment Service &amp; Maintenance</span></p>
+  <p class="role"><span lang="fr">Ingénieur biomédical · Maintenance et SAV d'équipements médicaux</span><span lang="en">Biomedical Engineer · Medical Equipment Service &amp; Maintenance</span></p>
   <p class="lede">
-    <span lang="fr">J'installe, maintiens et fais fonctionner les équipements médicaux des hôpitaux et cliniques d'Afrique de l'Ouest : endoscopie, électrochirurgie, stérilisation, cardiologie, imagerie. Du diagnostic de panne à la formation des utilisateurs.</span>
-    <span lang="en">I install, maintain and keep running the medical equipment of hospitals and clinics in West Africa: endoscopy, electrosurgery, sterilization, cardiology, imaging. From fault diagnosis to user training.</span>
+    <span lang="fr">J'assure l'installation, la maintenance et le SAV des équipements médicaux des hôpitaux et cliniques d'Afrique de l'Ouest : endoscopie, imagerie, cardiologie, bloc opératoire, stérilisation et laboratoire. Du diagnostic de panne à la formation des utilisateurs.</span>
+    <span lang="en">I install, maintain and service the medical equipment of hospitals and clinics in West Africa: endoscopy, imaging, cardiology, operating theatre, sterilization and laboratory. From fault diagnosis to user training.</span>
   </p>
-  <div class="chips hero-chips" aria-label="Specialties">
-    <span><span lang="fr">Installation &amp; mise en service</span><span lang="en">Installation &amp; commissioning</span></span>
-    <span><span lang="fr">Maintenance préventive &amp; corrective</span><span lang="en">Preventive &amp; corrective maintenance</span></span>
-    <span><span lang="fr">Diagnostic &amp; SAV</span><span lang="en">Troubleshooting &amp; after-sales service</span></span>
-    <span><span lang="fr">Formation utilisateurs</span><span lang="en">User training</span></span>
-  </div>
+  <ul class="spec4">
+    <li><b>01</b><span lang="fr">Installation &amp; mise en service</span><span lang="en">Installation &amp; commissioning</span></li>
+    <li><b>02</b><span lang="fr">Maintenance préventive &amp; corrective</span><span lang="en">Preventive &amp; corrective maintenance</span></li>
+    <li><b>03</b><span lang="fr">Diagnostic &amp; SAV</span><span lang="en">Fault diagnosis &amp; after-sales service</span></li>
+    <li><b>04</b><span lang="fr">Formation utilisateurs, documentation/qualité &amp; appels d'offres</span><span lang="en">User training, documentation/quality &amp; tenders</span></li>
+  </ul>
   <div class="cta">
     <a class="btn" href="#contact"><span lang="fr">Me contacter</span><span lang="en">Get in touch</span></a>
     <a class="btn alt" href="https://linkedin.com/in/royal-bebey-azad-84a7a2303" target="_blank" rel="noopener">LinkedIn</a>
@@ -216,6 +202,53 @@ h2{position:relative}
   <div class="fig"><b>20</b><span lang="fr">cliniques suivies en SAV</span><span lang="en">clinics covered in after-sales service</span></div>
   <div class="fig"><b>3000+</b><span lang="fr">jeunes formés en sciences et technologies</span><span lang="en">young learners trained in science and technology</span></div>
 </div>
+
+<section id="profil">
+  <h2><span lang="fr">Profil technique</span><span lang="en">Technical profile</span></h2>
+  <div class="prose">
+    <p><span lang="fr">Ingénieur biomédical (Master en technologies intégrées, option Ingénierie biomédicale, UPOA, mention Très Bien), spécialisé dans le service terrain des équipements médicaux : installation, mise en service, maintenance préventive et corrective, diagnostic de pannes et SAV.</span><span lang="en">Biomedical engineer (Master's in Integrated Technologies, Biomedical Engineering option, UPOA, first-class honours), specialised in field service of medical equipment: installation, commissioning, preventive and corrective maintenance, fault diagnosis and after-sales service.</span></p>
+    <p><span lang="fr">J'ai assuré le SAV de plus de 15 hôpitaux régionaux et 20 cliniques au Sénégal, sur des équipements Karl Storz, Fujifilm, Schiller, Philips, GE, Toshiba, Samsung Medison et CHISON. Je collabore avec les équipes techniques des fabricants et des fournisseurs, je rédige les rapports d'intervention, les protocoles de maintenance et les certificats d'installation, et je prépare les cotations techniques pour les appels d'offres (D.A.O).</span><span lang="en">I handled after-sales service for 15+ regional hospitals and 20 clinics in Senegal, on Karl Storz, Fujifilm, Schiller, Philips, GE, Toshiba, Samsung Medison and CHISON equipment. I work with manufacturers' and suppliers' technical teams, write intervention reports, maintenance protocols and installation certificates, and prepare technical quotations for tenders (D.A.O).</span></p>
+    <p><span lang="fr">Formateur, j'ai aussi formé plus de 3000 jeunes aux sciences et technologies, ce qui nourrit ma pédagogie auprès des utilisateurs : utilisation en sécurité, entretien courant, dépannage de premier niveau. Ouvert aux opportunités en Afrique de l'Ouest et du Centre.</span><span lang="en">As a trainer, I have also taught 3,000+ young learners science and technology, which shapes how I train equipment users: safe use, routine upkeep, first-level troubleshooting. Open to opportunities in West and Central Africa.</span></p>
+  </div>
+
+  <div class="dom">
+    <article>
+      <h3><span lang="fr">Service terrain</span><span lang="en">Field service</span></h3>
+      <p><span lang="fr">Installation, mise en service et réception sur site ; maintenance préventive et corrective ; dépannage de premier niveau ; suivi des interventions et priorisation des urgences.</span><span lang="en">On-site installation, commissioning and acceptance; preventive and corrective maintenance; first-level troubleshooting; follow-up of interventions and prioritisation of urgent cases.</span></p>
+      <div class="brands"><span lang="fr">Installation · Réception · Dépannage</span><span lang="en">Installation · Acceptance · Troubleshooting</span></div>
+    </article>
+    <article>
+      <h3><span lang="fr">Diagnostic et SAV</span><span lang="en">Diagnostics and after-sales</span></h3>
+      <p><span lang="fr">Diagnostic de pannes électromécaniques, électroniques et logicielles ; recours au support constructeur lorsque nécessaire ; remise en service après essais.</span><span lang="en">Diagnosis of electromechanical, electronic and software faults; manufacturer support when needed; return to service after testing.</span></p>
+      <div class="brands"><span lang="fr">Pannes · Support constructeur · SAV</span><span lang="en">Faults · Manufacturer support · After-sales</span></div>
+    </article>
+    <article>
+      <h3><span lang="fr">Contrôles et mesures</span><span lang="en">Testing and measurements</span></h3>
+      <p><span lang="fr">Tests de performance avec simulateurs et analyseurs (énergie de choc d'un défibrillateur sur charge de 50 Ω, temps de charge) ; mesures de sécurité électrique (courant de fuite, régime de terre) ; mises à jour de firmware et calibration.</span><span lang="en">Performance tests with simulators and analyzers (defibrillator shock energy on a 50 Ω load, charge time); electrical safety measurements (leakage current, earthing); firmware updates and calibration.</span></p>
+      <div class="brands"><span lang="fr">Simulateurs · Sécurité électrique · Calibration</span><span lang="en">Simulators · Electrical safety · Calibration</span></div>
+    </article>
+    <article>
+      <h3><span lang="fr">Documentation et qualité</span><span lang="en">Documentation and quality</span></h3>
+      <p><span lang="fr">Rapports d'intervention, bons de livraison technique, certificats d'installation et de satisfaction, protocoles de maintenance préventive avec critères d'acceptation, carnets de maintenance.</span><span lang="en">Intervention reports, technical delivery notes, installation and satisfaction certificates, preventive maintenance protocols with acceptance criteria, maintenance logs.</span></p>
+      <div class="brands"><span lang="fr">Rapports · Certificats · Protocoles</span><span lang="en">Reports · Certificates · Protocols</span></div>
+    </article>
+    <article>
+      <h3><span lang="fr">Appels d'offres et fournisseurs</span><span lang="en">Tenders and suppliers</span></h3>
+      <p><span lang="fr">Cotations techniques et comparatifs de spécifications pour les D.A.O ; vérification de la conformité des offres au cahier des charges ; recherche, évaluation et classement des fournisseurs.</span><span lang="en">Technical quotations and specification comparisons for tenders; compliance check of offers against the technical specifications; sourcing, evaluation and ranking of suppliers.</span></p>
+      <div class="brands"><span lang="fr">D.A.O · Cahier des charges · Benchmark</span><span lang="en">Tenders · Specifications · Benchmarking</span></div>
+    </article>
+    <article>
+      <h3><span lang="fr">Formation et accompagnement</span><span lang="en">Training and support</span></h3>
+      <p><span lang="fr">Formation des utilisateurs médicaux et techniques : utilisation en sécurité, entretien courant et dépannage de premier niveau.</span><span lang="en">Training of medical and technical users: safe use, routine upkeep and first-level troubleshooting.</span></p>
+      <div class="brands"><span lang="fr">Utilisateurs · Sécurité d'usage · Entretien</span><span lang="en">Users · Safe use · Upkeep</span></div>
+    </article>
+  </div>
+
+  <h3 class="subh"><span lang="fr">Outils et logiciels</span><span lang="en">Tools and software</span></h3>
+  <div class="chips">
+    <span>GANTT</span><span>PERT</span><span>MS Project</span><span>Arduino</span><span>HTML / CSS</span><span>Python</span><span>Matlab</span><span>SolidWorks</span><span>Tinkercad</span><span>MS Office</span><span>Canva</span>
+  </div>
+</section>
 
 <section id="expertise">
   <h2><span lang="fr">Domaines d'expertise</span><span lang="en">Areas of expertise</span></h2>
@@ -243,16 +276,6 @@ h2{position:relative}
       <h3><span lang="fr">Appels d'offres et formation</span><span lang="en">Tenders and training</span></h3>
       <p><span lang="fr">Cotations techniques pour D.A.O, formation du personnel utilisateur, rapports d'intervention et certificats d'installation.</span><span lang="en">Technical quotations for tenders, user training, intervention reports and installation certificates.</span></p>
     </article>
-  </div>
-</section>
-
-<section id="profil-technique">
-  <h2><span lang="fr">Profil technique</span><span lang="en">Technical profile</span> <small>Core expertise</small></h2>
-  <div class="dom">
-    <article><h3><span lang="fr">Service terrain</span><span lang="en">Field service</span></h3><p><span lang="fr">Diagnostic de pannes, maintenance préventive et corrective, mise en service et suivi des interventions.</span><span lang="en">Fault diagnosis, preventive and corrective maintenance, commissioning and intervention follow-up.</span></p></article>
-    <article><h3><span lang="fr">Équipements médicaux</span><span lang="en">Medical equipment</span></h3><p><span lang="fr">Endoscopie, imagerie, cardiologie, bloc opératoire, stérilisation et équipements de laboratoire.</span><span lang="en">Endoscopy, imaging, cardiology, operating theatre, sterilization and laboratory equipment.</span></p></article>
-    <article><h3><span lang="fr">Documentation &amp; qualité</span><span lang="en">Documentation &amp; quality</span></h3><p><span lang="fr">Rapports d'intervention, protocoles de maintenance, certificats d'installation et suivi technique.</span><span lang="en">Service reports, maintenance protocols, installation certificates and technical follow-up.</span></p></article>
-    <article><h3><span lang="fr">Appels d'offres &amp; utilisateurs</span><span lang="en">Tenders &amp; users</span></h3><p><span lang="fr">Cotations techniques, analyse des offres fournisseurs, formation et accompagnement des utilisateurs.</span><span lang="en">Technical quotations, supplier-offer review, user training and support.</span></p></article>
   </div>
 </section>
 
@@ -301,21 +324,6 @@ h2{position:relative}
           <div><b><span lang="fr">Cytologie et parasitologie</span><span lang="en">Cytology and parasitology</span></b><span class="s"><span lang="fr">Cytocentrifugeuse Epredia Cytospin 4 (dépôt de monocouches cellulaires sur lames). Automate de cytologie ILSA IDC20 (préparation, dont frottis cervico-vaginal). Microscope numérique automatisé miLab (NOUL) assisté par IA : frottis, coloration de type Romanowsky, imagerie et analyse pour le paludisme et la morphologie sanguine.</span><span lang="en">Epredia Cytospin 4 cytocentrifuge (cell monolayers deposited on slides). ILSA IDC20 cytology processor (preparation, including cervical smears). AI-assisted automated digital microscope miLab (NOUL): smear preparation, Romanowsky-type staining, imaging and analysis for malaria and blood morphology.</span></span></div>
           <div><b><span lang="fr">Préparation et microscopie</span><span lang="en">Sample preparation and microscopy</span></b><span class="s"><span lang="fr">Centrifugeuse réfrigérée (séparation des constituants sanguins, culture cellulaire, microplaques, microbiologie ; la réfrigération préserve les échantillons thermosensibles). Microscopes optiques LED, microscope à fluorescence non motorisé avec caméra. Analyseur d'urine.</span><span lang="en">Refrigerated centrifuge (blood component separation, cell culture, microplates, microbiology; refrigeration protects heat-sensitive samples). LED optical microscopes, non-motorized fluorescence microscope with camera. Urine analyzer.</span></span></div>
           <div><b><span lang="fr">Utilités de laboratoire</span><span lang="en">Laboratory utilities</span></b><span class="s"><span lang="fr">Distillateur d'eau LAUDA. Réfrigérateur de laboratoire Biobase BPR-5V588.</span><span lang="en">LAUDA water distiller. Biobase BPR-5V588 laboratory refrigerator.</span></span></div>
-        </div>
-        <h4><span lang="fr">Photos des équipements</span><span lang="en">Equipment photos</span></h4>
-        <div class="gal">
-          <button type="button" class="ph" data-full="img/maccura.jpg"><img src="img/maccura.jpg" width="897" height="1100" loading="lazy" alt="Automate Maccura"><span class="cap"><b><span lang="fr">Automate Maccura</span><span lang="en">Maccura analyzer</span></b><span lang="fr">Écran de travail : sélection des tests, réactifs, étalonnage, contrôle qualité.</span><span lang="en">Work screen: test selection, reagents, calibration, quality control.</span></span></button>
-          <button type="button" class="ph" data-full="img/ih500.jpg"><img src="img/ih500.jpg" width="1100" height="825" loading="lazy" alt="Bio-Rad IH-500 NEXT"><span class="cap"><b><span lang="fr">Bio-Rad IH-500 NEXT</span><span lang="en">Bio-Rad IH-500 NEXT</span></b><span lang="fr">Immuno-hématologie automatisée.</span><span lang="en">Automated immunohaematology.</span></span></button>
-          <button type="button" class="ph" data-full="img/virtuo.jpg"><img src="img/virtuo.jpg" width="687" height="1100" loading="lazy" alt="bioMérieux BACT/ALERT VIRTUO"><span class="cap"><b><span lang="fr">bioMérieux BACT/ALERT VIRTUO</span><span lang="en">bioMérieux BACT/ALERT VIRTUO</span></b><span lang="fr">Hémocultures.</span><span lang="en">Blood cultures.</span></span></button>
-          <button type="button" class="ph" data-full="img/genexpert.jpg"><img src="img/genexpert.jpg" width="1100" height="648" loading="lazy" alt="Cepheid GeneXpert"><span class="cap"><b><span lang="fr">Cepheid GeneXpert</span><span lang="en">Cepheid GeneXpert</span></b><span lang="fr">PCR en temps réel, 16 modules.</span><span lang="en">Real-time PCR, 16 modules.</span></span></button>
-          <button type="button" class="ph" data-full="img/idc20.jpg"><img src="img/idc20.jpg" width="948" height="897" loading="lazy" alt="ILSA IDC20"><span class="cap"><b><span lang="fr">ILSA IDC20</span><span lang="en">ILSA IDC20</span></b><span lang="fr">Automate de cytologie.</span><span lang="en">Cytology processor.</span></span></button>
-          <button type="button" class="ph" data-full="img/cytospin.jpg"><img src="img/cytospin.jpg" width="825" height="1100" loading="lazy" alt="Epredia Cytospin 4"><span class="cap"><b><span lang="fr">Epredia Cytospin 4</span><span lang="en">Epredia Cytospin 4</span></b><span lang="fr">Cytocentrifugeuse.</span><span lang="en">Cytocentrifuge.</span></span></button>
-          <button type="button" class="ph" data-full="img/milab.jpg"><img src="img/milab.jpg" width="825" height="1100" loading="lazy" alt="miLab (NOUL)"><span class="cap"><b><span lang="fr">miLab (NOUL)</span><span lang="en">miLab (NOUL)</span></b><span lang="fr">Microscope numérique automatisé.</span><span lang="en">Automated digital microscope.</span></span></button>
-          <button type="button" class="ph" data-full="img/psm.jpg"><img src="img/psm.jpg" width="825" height="1100" loading="lazy" alt="Poste de sécurité microbiologique Biobase"><span class="cap"><b><span lang="fr">Poste de sécurité microbiologique Biobase</span><span lang="en">Biobase biological safety cabinet</span></b><span lang="fr">Barrière opérateur, environnement, échantillon.</span><span lang="en">Operator, environment and sample barrier.</span></span></button>
-          <button type="button" class="ph" data-full="img/systec.jpg"><img src="img/systec.jpg" width="825" height="1100" loading="lazy" alt="Autoclave Systec VE-100"><span class="cap"><b><span lang="fr">Autoclave Systec VE-100</span><span lang="en">Systec VE-100 autoclave</span></b><span lang="fr">Stérilisation à la vapeur.</span><span lang="en">Steam sterilization.</span></span></button>
-          <button type="button" class="ph" data-full="img/heratherm.jpg"><img src="img/heratherm.jpg" width="825" height="1100" loading="lazy" alt="Thermo Scientific Heratherm"><span class="cap"><b><span lang="fr">Thermo Scientific Heratherm</span><span lang="en">Thermo Scientific Heratherm</span></b><span lang="fr">Étuve à température contrôlée.</span><span lang="en">Temperature-controlled oven.</span></span></button>
-          <button type="button" class="ph" data-full="img/lauda.jpg"><img src="img/lauda.jpg" width="927" height="988" loading="lazy" alt="Distillateur d'eau LAUDA"><span class="cap"><b><span lang="fr">Distillateur d'eau LAUDA</span><span lang="en">LAUDA water distiller</span></b><span lang="fr">Eau distillée pour le laboratoire.</span><span lang="en">Distilled water for the laboratory.</span></span></button>
-          <button type="button" class="ph" data-full="img/refrigerateurs.jpg"><img src="img/refrigerateurs.jpg" width="1100" height="825" loading="lazy" alt="Réfrigérateurs de laboratoire"><span class="cap"><b><span lang="fr">Réfrigérateurs de laboratoire</span><span lang="en">Laboratory refrigerators</span></b><span lang="fr">Gamme Biobase et M390FR.</span><span lang="en">Biobase and M390FR range.</span></span></button>
         </div>
       </div>
     </details>
@@ -489,7 +497,7 @@ h2{position:relative}
 </section>
 
 <section id="formation">
-  <h2><span lang="fr">Formation, certifications, outils</span><span lang="en">Education, certifications, tools</span></h2>
+  <h2><span lang="fr">Formation et certifications</span><span lang="en">Education and certifications</span></h2>
   <div class="cols">
     <div>
       <h3><span lang="fr">Formation</span><span lang="en">Education</span></h3>
@@ -505,7 +513,7 @@ h2{position:relative}
         <li>Karl Storz<small><span lang="fr">Service Business Glass &amp; Steel, lancement OR1 X PRO · avril 2026</span><span lang="en">Service Business Glass &amp; Steel, OR1 X PRO product launch · Apr 2026</span></small></li>
         <li>Jaeger Medical GmbH<small><span lang="fr">Spiromètres Vyntus BODY, ONE, IOS, Pneumo, Spiro, Walk, CPX avec ECG et Canopy · sept. 2025</span><span lang="en">Vyntus BODY, ONE, IOS, Pneumo, Spiro, Walk, CPX spirometers with ECG and Canopy · Sep 2025</span></small></li>
         <li>Tech Global University Andorre<small><span lang="fr">Analyse et capture des images biomédicales · déc. 2024 – mars 2025</span><span lang="en">Biomedical image analysis and capture · Dec 2024 – Mar 2025</span></small></li>
-        <li>INRS</li>
+        <li>INRS<small><span lang="fr">Institut national de recherche et de sécurité (France) pour la prévention des accidents du travail et des maladies professionnelles. Autoformation en ligne « Acquérir les bases en prévention des risques professionnels », en quatre modules : initiation à la prévention, liens entre travail et santé, comprendre l'accident du travail, participer à l'évaluation des risques. Intérêt métier : intégrer la prévention des risques dans les interventions sur site hospitalier.</span><span lang="en">France's national research and safety institute for the prevention of work accidents and occupational diseases. Online self-training "Acquérir les bases en prévention des risques professionnels" (fundamentals of occupational risk prevention), in four modules: introduction to prevention, links between work and health, understanding work accidents, taking part in risk assessment. Relevance: building risk prevention into on-site hospital interventions.</span></small></li>
       </ul>
     </div>
     <div>
@@ -515,10 +523,6 @@ h2{position:relative}
         <li><span lang="fr">Anglais</span><span lang="en">English</span><small><span lang="fr">Lu, parlé, écrit</span><span lang="en">Read, spoken, written</span></small></li>
       </ul>
     </div>
-  </div>
-  <h3 style="font-family:var(--f-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:2rem 0 .7rem"><span lang="fr">Outils</span><span lang="en">Tools</span></h3>
-  <div class="chips">
-    <span>GANTT</span><span>PERT</span><span>MS Project</span><span>Arduino</span><span>HTML / CSS</span><span>Python</span><span>Matlab</span><span>SolidWorks</span><span>Tinkercad</span><span>MS Office</span><span>Canva</span>
   </div>
 </section>
 
@@ -532,11 +536,9 @@ h2{position:relative}
   </div>
 </div>
 
-<footer>
-  <div><strong>Royal Azad</strong> · <span lang="fr">Ingénieur biomédical</span><span lang="en">Biomedical Engineer</span></div>© 2026 Royal Azad</footer>
+<footer>© 2026 Royal Azad</footer>
 </div>
 
-<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo"><button type="button" id="lb-x">&#10005;</button><img id="lb-img" alt=""><p id="lb-cap"></p></div>
 <script>
 (function(){
   var b=document.body, fr=document.getElementById('bfr'), en=document.getElementById('ben');
@@ -584,19 +586,6 @@ h2{position:relative}
     },{rootMargin:'-35% 0px -55% 0px'});
     links.forEach(function(a){var t=document.getElementById(a.getAttribute('href').slice(1)); if(t) io.observe(t)});
   }
-  // Photos : agrandissement au clic
-  var lb=document.getElementById('lb'), lbi=document.getElementById('lb-img'), lbc=document.getElementById('lb-cap');
-  function closeLb(){lb.hidden=true;lbi.removeAttribute('src')}
-  document.querySelectorAll('.ph').forEach(function(b){
-    b.addEventListener('click',function(){
-      lbi.src=b.getAttribute('data-full'); lbi.alt=b.querySelector('img').alt;
-      var l=b.closest('body').getAttribute('data-l');
-      var c=b.querySelector('.cap b span[lang="'+l+'"]'); lbc.textContent=c?c.textContent:'';
-      lb.hidden=false;
-    });
-  });
-  lb.addEventListener('click',closeLb);
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden) closeLb()});
 })();
 </script>
 
